@@ -1,58 +1,57 @@
 <?php
 
 class Usuarios extends model {
-// private só aparece nessa classe
- private $userInfo;
- 
+
+    private $userInfo;
 
 //metodo ver se usuario esta logado ou se nao direciona para logar 
     public function verificarLogin() {
         // verifica se nao existir session ou se existir e esta vazio  a session
-        if (!isset($_SESSION['login_id']) || (isset($_SESSION['login_id']) && empty($_SESSION['login_id']))) {
+        if (!isset($_SESSION['nutricaolg']) || (isset($_SESSION['nutricaolg']) && empty($_SESSION['nutricaolg']))) {
             header("Location:" . BASE_URL . "login");
             exit;
         }
     }
 
-  /*  //metodo para saber nome de quem esta logado
+    //metodo para saber nome de quem esta logado
     public function setlogado() {
-        if (isset($_SESSION['loged']) && (!empty($_SESSION['loged']))) {
-            $id = $_SESSION['loged'];
-            $sql = "SELECT * FROM usuarios WHERE id = '" . $id . "'";
+        if (isset($_SESSION['nutricaolg']) && (!empty($_SESSION['nutricaolg']))) {
+            $id = $_SESSION['nutricaolg'];
+            $sql = "SELECT * FROM usuario WHERE id = '" . $id . "'";
             $sql = $this->db->query($sql);
                     if ($sql->rowCount() > 0) {
-                        $this->userInfo = $sql->fetch();
-                 
+                    $this->userInfo = $sql->fetch();
                      }
         }
     }
-*/
-    
+
+    //metodo para saber qual clinica usuario pertence
+    public function getClinica() {
+        if (isset($this->userInfo['id_clinica'])) {
+            return $this->userInfo['id_clinica'];
+        } else {
+            return 0;
+        }
+    }
 
     //metodo para validar o usuario para o sitema
     public function doLogin($email, $senha) {
         try {// tratar erro do sistema
             // Valida no banco o registro/senha
-             $sql = "SELECT * FROM usuarios WHERE email = '" . $email . "' AND senha = '" . $senha . "' "; //limit 1 pega somente um registro
+             $sql = "SELECT * FROM usuario WHERE email = '" . $email . "' AND senha = '" . $senha . "' "; //limit 1 pega somente um registro
              $sql = $this->db->query($sql);
              if ($sql->rowCount() > 0) {
                 $dado = $sql->fetch(); //pega o primeiro resultado da lista
-                $_SESSION['login_id'] = $dado['id'];
+                $_SESSION['nutricaolg'] = $dado['id'];
                 $_SESSION['nome_usuario'] = $dado['nome'];
                 $status=$dado['status'];
-               
-               
-                
                  if(!empty($status)){
-                        if($status=="ativo"){
-                    
-                         header("Location:" . BASE_URL . "menuPrincipal");
+                    if($status=='Ativo'){
+                         header("Location:" . BASE_URL . "menuprincipal");
                           exit;
                     }else{
-                         
                         return "Bloqueado! Verificar com a Administração!";
                     }
-                   
                 }
                
             } else {
@@ -60,49 +59,72 @@ class Usuarios extends model {
             }
         } catch (PDOException $e) {
 
-            echo "Falhou dologin:" . $e->getMessage();
+            echo "Falhou:" . $e->getMessage();
         }
     }
 
     //metodo para verificar se o usuario existe
     public function usuarioExiste($email) {
-        $sql = "SELECT * FROM usuarios WHERE email='" . $email . "'";
+        $sql = "SELECT * FROM usuario WHERE email='" . $email . "'";
         $sql = $this->db->query($sql);
         if ($sql->rowCount() > 0) {
-            return true;
+            return $id = $sql['id'];;
+        } else {
+            return false;
+        }
+    }
+       //metodo para verificar se o usuario existe
+    public function usuarioExisteFunc($email) {
+        $sql = "SELECT * FROM usuario WHERE email='" . $email . "'";
+        $sql = $this->db->query($sql);
+        if ($sql->rowCount() > 0) {
+            return $id = $sql['id'];;
         } else {
             return false;
         }
     }
 
-    //metodo para listar usuarios
-    public function getListUsuarios($pesquisa) {
-      $array = array();
-        if (!empty($pesquisa)) {
-
-            $sql = "SELECT * FROM usuarios WHERE nome LIKE'%" . $pesquisa . "%' OR email LIKE'%" . $pesquisa . "%' ";
-            $sql = $this->db->query($sql);
-            if ($sql->rowCount() > 0) {
-                $array = $sql->fetchAll();
+    //metodo para listar usuario
+    public function getListUsuario($id) {
+        $array=array();
+        if(!empty($id)){
+            $sql="SELECT * FROM usuario WHERE id ='".$id."'";
+            $sql=$this->db->query($sql);
+            if($sql->rowCount()>0){
+                   $array = $sql->fetch();
+               
             }
+             return $array;
+            
         }
-        return $array;
+        
     }
-        
-    
-    
+    public function getListTodosUsuarios ($pesquisa){
+        $array=array();
+        if(!empty($pesquisa)){
+            $sql = "SELECT * FROM usuario WHERE nome LIKE'%".$pesquisa."%' OR email LIKE'%".$pesquisa."%' ";
+            $sql = $this->db->query($sql);
+            if($sql->rowCount() > 0){
+                $array = $sql->fetchAll();
+               
+            }
+             return $array;
+        }
+    }
+
+
     //metodo para cadastrar usuario com tempo de validar (uma semana de prazo)
-    public function cadastrarUsuario($nome, $email, $senha) {
+    public function cadastrar($nome, $email, $senha, $sexo, $celular) {
         
-        $sql = "INSERT INTO usuarios SET nome='" . $nome . "', email='" . $email . "', senha='" . $senha . "',status='Inativo'";
+        $sql = "INSERT INTO usuario SET nome='" . $nome . "', email='" . $email . "', senha='" . $senha . "', sexo='" . $sexo . "',celular='" . $celular . "',status='Inativo',data=NOW() ";
         $sql = $this->db->query($sql);
         $id = $this->db->lastInsertId();
-        $_SESSION['loged'] = $id;
+        $_SESSION['nutricaolg'] = $id;
 
         if ($sql->rowCount() > 0) {
-        /*   $token = md5(time() . rand(0, 9999) . rand(0, 9999));
+           $token = md5(time() . rand(0, 9999) . rand(0, 9999));
             $expirado = date('Y-m-d H:i', strtotime('+1 week'));
-            $sql = "INSERT INTO usuarios_token (id_usuarios, hash, expirado) VALUES ('" . $id . "','" . $token . "','" . $expirado . "')";
+            $sql = "INSERT INTO usuario_token (id_usuario, hash, expirado) VALUES ('" . $id . "','" . $token . "','" . $expirado . "')";
             $sql = $this->db->query($sql);
             $link = BASE_URL . "confirmar?token=" . $token;
             $mensagem = "Clique no link para confirmar o cadastro:" . $link;
@@ -111,24 +133,28 @@ class Usuarios extends model {
                     'X-Mailer: PHP/' . phpversion();
             //mail($email, $assunto, $mensagem, $headers);
             echo $mensagem;
-            exit; */
+            exit;
             return true;
         }
     }
     
+
+    
     //metodo para validar o cadastro do usuario pelo login
-/*       public function confirmarCadastro($token){
-        $sql = "SELECT * FROM funcionarios_token WHERE hash = '" . $token . "' AND used = 0 AND expirado > NOW()";
+       public function confirmarCadastro($token){
+        $sql = "SELECT * FROM usuario_token WHERE hash = '" . $token . "' AND used = 0 AND expirado > NOW()";
         $sql = $this->db->query($sql);
         if ($sql->rowCount() > 0) {
             $sql = $sql->fetch();
-            $id = $sql['id_funcionario'];
-            $sql = "UPDATE funcionarios SET status = 'Ativo'  WHERE id = '" . $id . "'";
+            $id = $sql['id_usuario'];
+            $sql = "UPDATE usuario SET status = 'Ativo'  WHERE id = '" . $id . "'";
             $sql = $this->db->query($sql);
             if ($sql->rowCount() > 0) {
-                $sql = "UPDATE funcionarios_token SET used = 1  WHERE hash = '" . $token . "'";
+                $sql = "UPDATE usuario_token SET used = 1  WHERE hash = '" . $token . "'";
                 $sql = $this->db->query($sql);
                 if ($sql->rowCount() > 0) {
+                    
+                    header("Location:" . BASE_URL . "login");
                     echo "Cadastro confirmado com sucesso!";
                     exit;
                 }
@@ -138,14 +164,14 @@ class Usuarios extends model {
             exit;
         }
     }
-    */
+    
     //metodo administracao que pode editar usuario 
     public function editarUsuario (  $id,$nome, $email) {
       //verificar comando sql principalmente now data 
-        $sql = "UPDATE usuarios SET nome='" . $nome . "', email='" . $email . "',celular='" . $celular . "',status='Inativo',data='".$data."' WHERE id ='".$id."' ";
+        $sql = "UPDATE usuario SET nome='" . $nome . "', email='" . $email . "', sexo='" . $sexo . "',celular='" . $celular . "',status='Inativo',data='".$data."' WHERE id ='".$id."' ";
         $sql = $this->db->query($sql);
         $id = $this->db->lastInsertId();
-        $_SESSION['loged'] = $id;
+        $_SESSION['nutricaolg'] = $id;
 
         if ($sql->rowCount() > 0) {
            
@@ -153,15 +179,15 @@ class Usuarios extends model {
             return true;
         }
     }
-
+ //pegar o nome do usuario logado
     public function getNome($id) {
-  $array=array();
-        $sql = "SELECT nome FROM usuarios WHERE id = '" . $id . "'";
+
+        $sql = "SELECT nome FROM usuario WHERE id = '" . $id . "'";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
             $sql = $sql->fetch();
-            return $array=$sql['nome'];
+            return $sql['nome'];
         } else {
             return '';
         }
@@ -170,20 +196,21 @@ class Usuarios extends model {
     public function getDados($id) {
 
         $array = array();
-        $sql = "SELECT nome FROM usuarios WHERE id = '" . $id . "'";
+        $sql = "SELECT * FROM usuario WHERE id = '" . $id . "'";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
-            $array = $sql->fetchAll();
+            $array = $sql->fetch(PDO::FETCH_ASSOC);
 
-            return $array;
         }
+         return $array;
+          
     }
 
-    public function updatePerfil($array) {
+    public function updatePerfil($array = array()) {
 
         if (count($array) > 0) {
-            $sql = "UPDATE usuarios SET ";
+            $sql = "UPDATE usuario SET ";
 
             $campos = array();
             foreach ($array as $campo => $valor) {
@@ -192,7 +219,7 @@ class Usuarios extends model {
 
             $sql .= implode(',', $campos);
 
-            $SQL .= " WHERE id = '" . ($_SESSION['loged']) . "'";
+            $sql .= " WHERE id = '" . ($_SESSION['nutricaolg']) . "'";
 
             $sql = $this->db->query($sql);
             return true;
@@ -202,11 +229,11 @@ class Usuarios extends model {
         }
     }
 
- /*   public function esquecisenha($email) {
+    public function esquecisenha($email) {
 
 
 
-        $sql = "SELECT * FROM usuarios WHERE email = '" . $email . "' ";
+        $sql = "SELECT * FROM usuario WHERE email = '" . $email . "' ";
         $sql = $this->db->query($sql);
 
         if ($sql->rowCount() > 0) {
@@ -214,7 +241,7 @@ class Usuarios extends model {
             $id = $sql['id'];
             $token = md5(time() . rand(0, 9999) . rand(0, 9999));
             $expirado = date('Y-m-d H:i', strtotime('+1 months'));
-            $sql = "INSERT INTO funcionarios_token (id_funcionario, hash, expirado) VALUES ('" . $id . "','" . $token . "','" . $expirado . "')";
+            $sql = "INSERT INTO usuario_token (id_funcionario, hash, expirado) VALUES ('" . $id . "','" . $token . "','" . $expirado . "')";
 
             $sql = $this->db->query($sql);
 
@@ -234,7 +261,7 @@ class Usuarios extends model {
     public function redefinirSenha($token, $senha) {
 
 
-        $sql = "SELECT * FROM funcionarios_token WHERE hash = '" . $token . "' AND used = 0 AND expirado > NOW()";
+        $sql = "SELECT * FROM usuario_token WHERE hash = '" . $token . "' AND used = 0 AND expirado > NOW()";
 
         $sql = $this->db->query($sql);
 
@@ -243,14 +270,14 @@ class Usuarios extends model {
 
 
             $sql = $sql->fetch();
-            $id = $sql['id_funcionario'];
+            $id = $sql['id_usuario'];
 
-            $sql = "UPDATE funcionarios SET senha = '" . $senha . "'  WHERE id = '" . $id . "'";
+            $sql = "UPDATE usuario SET senha = '" . $senha . "'  WHERE id = '" . $id . "'";
 
             $sql = $this->db->query($sql);
             if ($sql->rowCount() > 0) {
 
-                $sql = "UPDATE funcionarios_token SET used = 1  WHERE hash = '" . $token . "'";
+                $sql = "UPDATE usuario_token SET used = 1  WHERE hash = '" . $token . "'";
 
                 $sql = $this->db->query($sql);
                 if ($sql->rowCount() > 0) {
@@ -264,7 +291,11 @@ class Usuarios extends model {
         }
     }
     
-    */
+    public function log($acao, $usuario){
+    
+     $sql= "INSERT INTO log (usuario, data, acao)VALUES ('".$usuario. "' , NOW() ,'".$acao."') ";    
+         $sql = $this->db->query($sql);
+    }
  
 
 }

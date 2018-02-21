@@ -1,8 +1,10 @@
 <title>Menu Principal</title>
 
 
-<script src="<?php echo BASE_URL; ?>assets/js/script.js"></script>
-<h1>menu principal</h1></br></br>
+
+
+
+
 <form method="POST">
 <label>Tipo de contrato</label>
   
@@ -155,4 +157,3 @@
 </br>
 </div>
 </form>
-<script src="<?php echo BASE_URL; ?>assets/js/imovel.js"></script>

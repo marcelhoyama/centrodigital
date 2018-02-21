@@ -1,0 +1,578 @@
+ @charset "UTF-8";
+/* CSS Document */
+
+
+/* ------------------------ GENERAL LAYOUT STYLES ----------------------- */
+
+
+.sidebar {
+	float: left;
+	width: 180px;
+	height: auto;
+	background-color: #CCCCCC;
+}
+.side_menu_button {
+	margin-top:0px;
+	float: left;
+	-webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+}
+
+
+.icone_div {
+	float:right;
+	display:block;
+	background-color: #333;
+	width: 100px;
+	height: 100px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top:10px;
+	-webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+}
+/* ------------------------ PAGE CONTENT STYLES ----------------------- */
+
+.login_div {
+	margin: auto;
+	margin-top: 20px;
+	text-align: center;
+	height: auto;
+	min-height: 600px;
+	width: 600px;
+	background-color: #FFF;
+/*	-webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);*/
+}
+
+.widget_div {
+	margin: 10px;
+	padding: 10px;
+	margin-bottom: 10px;
+	float: right;
+	width: 480px;
+	height: auto;
+	/*min-height: 580px;*/
+	background-color: #FFF;
+	-webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+}
+.hoje_lista_consultas {
+	float: left;
+	width: 460px;
+	height: 460px;
+	background-color: #2E2E2E;
+	padding: 10px 10px 0px 10px;
+	overflow-y: scroll;
+	-webkit-box-shadow: inset 0px 1px 25px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: inset 0px 1px 25px 0px rgba(0,0,0,0.5);
+	box-shadow: inset 0px 1px 25px 0px rgba(0,0,0,0.5);
+}
+.lista_espera_consultas {
+	float: left;
+	width: 960px;
+	height: auto;
+	min-height: 250px;
+	background-color: #2E2E2E;
+	padding: 10px 10px 0px 10px;
+	overflow-y: scroll;
+	-webkit-box-shadow: inset 0px 1px 25px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: inset 0px 1px 25px 0px rgba(0,0,0,0.5);
+	box-shadow: inset 0px 1px 25px 0px rgba(0,0,0,0.5);
+}
+.lista_confirma_consultas {
+	float: left;
+	width: 960px;
+	height: 250px;
+	background-color: #2E2E2E;
+	padding: 10px 10px 0px 10px;
+	overflow-y: scroll;
+	-webkit-box-shadow: inset 5px 5px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 5px 5px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: inset 5px 5px 15px 0px rgba(0,0,0,0.75);
+}
+.exemplo {
+	float: left;
+	width: 920px;
+	min-height: 40px;
+	height:auto;
+	background-color: #FFF;
+	margin-bottom: 10px;
+	padding: 10px;
+	-webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+}
+.exemplo_widget {
+	float: left;
+	width: 420px;
+	min-height: 40px;
+	height:auto;
+	background-color: #FFF;
+	margin-bottom: 10px;
+	padding: 5px;
+	-webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+}
+.consulta_scroll {
+	width: 980px;
+	height: 500px;
+	background-color: #FFF;
+	overflow-y: scroll;
+}
+.pacientes_lista_busca {
+	float: left;
+	width: 960px;
+	height: 360px;
+	background-color: #2E2E2E;
+	padding: 10px 10px 0px 10px;
+	overflow-y: scroll;
+}
+.lista_consultas_anteriores {
+	float: left;
+	width: 960px;
+	height: 160px;
+	background-color: #2E2E2E;
+	padding: 10px 10px 0px 10px;
+	overflow-y: scroll;
+}
+/* ------------------------ BUTTON STYLES ----------------------- */
+
+.button_entrar {
+	background-image: url(img/button_entrar.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	cursor: pointer;
+	-webkit-appearance: none;
+	height: 40px;
+	width: 80px;
+	border: none;
+	margin-top: 10px;
+}
+.button_enviar {
+	background-image: url(img/button_enviar.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	cursor: pointer;
+	-webkit-appearance: none;
+	height: 40px;
+	width: 110px;
+	border: none;
+	margin-top: 10px;
+}
+.button_salvar {
+	background-image: url(img/button_salvar.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	cursor: pointer;
+	-webkit-appearance: none;
+	height: 40px;
+	width: 102px;
+	border: none;
+	margin-top: 10px;
+}
+.button_iniciar_consulta {
+	float: right;
+	height: 40px;
+	width: 186px;
+}
+.button_agendar {
+	background-image: url(img/button_agendar.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	cursor: pointer;
+	height: 40px;
+	width: 140px;
+	margin-top: 10px;
+	margin-left: 10px;
+	float: right;
+}
+.button_concluir {
+	margin-left: 10px;
+	float: right;
+	background-image: url(img/button_concluir.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	cursor: pointer;
+	-webkit-appearance: none;
+	height: 40px;
+	width: 130px;
+	border: none;
+	margin-top: 10px;
+}
+.button_incluir_novo_paciente {
+	float: right;
+	margin-top: 10px;
+	margin-top: 10px;
+}
+.button_buscar {
+	margin-left: 10px;
+	margin-bottom: 10px;
+	background-image: url(img/button_buscar.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	cursor: pointer;
+	-webkit-appearance: none;
+	height: 40px;
+	width: 120px;
+	border: none;
+}
+.button_editar {
+	float: right;
+	margin-top: 10px;
+	margin-left: 10px;
+	height: 40px;
+	width: 100px;
+}
+.button_cancelar {
+	margin-left: 10px;
+	float: right;
+	margin-top: 10px;
+	height: 40px;
+	width: 140px;
+}
+.button_falta_nao_justificada {
+	margin-left: 10px;
+	float: right;
+	margin-top: 10px;
+	height: 40px;
+	width: 238px;
+}
+.button_confirmar {
+	margin-left: 10px;
+	float: right;
+	margin-top: 10px;
+	height: 40px;
+	width: 120px;
+}
+.button_salvar {
+	float: right;
+	margin-top: 10px;
+	height: 40px;
+	width: 120px;
+}
+/* ------------------------ OTHER / DETAILED STYLES ----------------------- */
+
+ ol, dl {
+	padding: 0;
+	margin: 0;
+}
+h1 {
+	color: #246196;
+	text-align:center;
+}
+h2 {
+	color: #246196;
+	font-weight: normal;
+}
+h3 {
+	color: #246196;
+}
+.exemplo h2 {
+	float: left;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+a img {
+	border: none;
+}
+a:link {
+	color: #42413C;
+	text-decoration: underline;
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus {
+	text-decoration: none;
+}
+ul.nav {
+	list-style: none;
+	margin-bottom: 15px;
+}
+ul.nav li {
+	text-align: center;
+}
+ul.nav a, ul.nav a:visited {
+	padding: 10px 10px 10px 10px;
+	display: block;
+	text-decoration: none;
+	background-color: #CCCCCC;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
+	background-color: #CCCCCC;
+	color: #FFF;
+}
+.footer p {
+	text-align: right;
+	font-size: 12px;
+	padding: 0px;
+	margin: 0px;
+	color: #FFF;
+}
+.footer a {
+	
+	color: #246196;
+	text-decoration: none;
+	font-weight: bold;
+}
+.login_div hr {
+	width: 400px;
+}
+.menu_splitters {
+	height: 1px;
+	background-color: #999;
+	width: 160px;
+	margin: auto;
+	padding: 0px;
+}
+.foto_paciente {
+	float: right;
+}
+
+
+
+
+/* MENU STUFF */
+
+/**
+ * Menu overview.
+ */
+ 
+ .menu_top{
+	position:fixed;
+	top:0;
+	width: 100%;
+	height:80px;
+	padding: 10px;
+	box-sizing: border-box;
+	background-color: #090;
+	clear: both;
+	
+
+}
+.c-button {
+	width: 40px;
+	height: 40px;
+	background-color: #CCC;
+	cursor: pointer;
+	-webkit-appearance: none;
+	border: none;
+	font-size: 28px;
+}
+.c-menu {
+	position: fixed;
+	z-index: 200;
+	background-color: #67b5d1;
+	transition: transform 0.3s;
+	-webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+}
+.c-menu__items {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+/**
+ * Close button resets.
+ */
+.c-menu__close {
+	color: #fff;
+	background-color: #00CC00;
+	font-size: 28px;
+	border: none;
+	box-shadow: none;
+	border-radius: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	cursor: pointer;
+	text-align: right;
+	display: block;
+	padding-right: 12px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	width: 100%;
+}
+/**
+ * Close button resets.
+ */
+.c-menu__close:focus {
+	outline: none;
+}
+/**
+ * Body states.
+ *
+ * When a menu is active, we want to hide the overflows on the body to prevent
+ * awkward document scrolling.
+ */
+body.has-active-menu {
+	overflow: hidden;
+}
+/**
+ * Mask component
+ */
+
+.c-mask {
+	position: fixed;
+	/*z-index: 100;*/
+	top: auto;
+	left: 0;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	background-color: #000;
+	opacity: 0;
+	transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+}
+.c-mask.is-active {
+	width: 100%;
+	height: 100%;
+	opacity: 0.7;
+	transition: opacity 0.3s;
+}
+.c-menu--slide-left {
+	width: 100%;
+	overflow:visible;
+	height: 100%;
+	background-color: #FFF;
+}
+ @media all and (min-width: 320px) {
+.c-menu--slide-left {
+	width: 200px;
+}
+}
+.c-menu--slide-left .c-menu__item {
+	display: block;
+	text-align: left;
+}
+.c-menu--slide-left .c-menu__item:first-child {
+	border-top: none;
+}
+.c-menu--slide-left .c-menu__item:last-child {
+	border-bottom: none;
+}
+.c-menu--slide-left .c-menu__link {
+	display: block;
+	padding: 12px 24px;
+	color: #666;
+	text-decoration: none;
+}
+.c-menu--slide-left {
+	top: auto;
+	left: 0;
+	transform: translateX(50%);
+}
+ @media all and (min-width: 320px) {
+.c-menu--slide-left {
+	transform: translateX(-300px);
+}
+}
+.c-menu--slide-left.is-active {
+	transform: translateX(0);
+}
+/*----------------TAB STUFF--------------*/
+
+.tabs {
+	overflow: hidden;
+	clear: both;
+}
+.tabs ul {
+	list-style-type: none;
+	bottom: -1px;
+	position: relative;
+}
+.tabs li {
+	float: left;
+}
+.tabs a {
+	display: block;
+	padding: 5px 10px;
+	background-color: #EEE;
+	color: #000;
+	text-decoration: none;
+	margin: 0 4px;
+	border-top: 1px solid #CCC;
+	border-left: 1px solid #DDD;
+	border-right: 1px solid #DDD;
+	font: 13px/18px verdana, arial, sans-serif;
+	border-bottom: 1px solid #CCC;
+}
+.tabs a.active {
+	background-color: #fff;
+	border-bottom: 1px solid #fff;
+}
+.tabs div {
+	clear: both;
+	border: 1px solid #CCC;
+	padding: 5px;
+	font-family: verdana;
+	font-size: 13px;
+	background-color: #fff;
+	display: none;
+}
+/*----------------POPUP STUFF--------------*/
+
+/* Outer */
+.popup {
+    width:100%;
+    height:100%;
+    display:none;
+    position:fixed;
+    top:0px;
+    left:0px;
+    background:rgba(0,0,0,0.75);
+}
+ 
+/* Inner */
+.popup-inner {
+    max-width:700px;
+    width:90%;
+    padding:40px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%, -50%);
+    transform:translate(-50%, -50%);
+    box-shadow:0px 2px 6px rgba(0,0,0,1);
+    border-radius:3px;
+    background:#fff;
+}
+ 
+/* Close Button */
+.popup-close {
+    width:30px;
+    height:30px;
+    padding-top:4px;
+    display:inline-block;
+    position:absolute;
+    top:0px;
+    right:0px;
+    transition:ease 0.25s all;
+    -webkit-transform:translate(50%, -50%);
+    transform:translate(50%, -50%);
+    border-radius:1000px;
+    background:rgba(0,0,0,0.8);
+    font-family:Arial, Sans-Serif;
+    font-size:20px;
+    text-align:center;
+    line-height:100%;
+    color:#fff;
+}
+ 
+.popup-close:hover {
+    -webkit-transform:translate(50%, -50%) rotate(180deg);
+    transform:translate(50%, -50%) rotate(180deg);
+    background:rgba(0,0,0,1);
+    text-decoration:none;
+}

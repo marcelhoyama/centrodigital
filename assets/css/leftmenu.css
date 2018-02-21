@@ -1,0 +1,47 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20/08/2017, 23:06:35
+    Author     : marcel
+*/
+.leftmenu{
+    width: 200px;
+    background-color: #009900;
+    position: absolute;
+    left: 0;
+    top:50px;
+    bottom: 0;
+    
+}
+.container{
+    padding-left: 200px;
+}
+.containerarea{
+    padding: 0 0 0;
+}
+.menuarea{
+    color: #FFF;
+}
+.menuarea ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menuarea li{
+    height: 40px;
+    line-height:40px;
+    font-size: 12px;
+    padding-left: 30px;
+    
+}
+.menuarea li:hover{
+    background-color: #000;
+}
+.menuarea li a{
+    color: #FFF;
+    text-decoration: none;
+    display: block;
+}

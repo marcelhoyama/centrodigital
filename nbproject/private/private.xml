@@ -2,6 +2,20 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/centrodigital/controllers/clientecadastrarController.php</file>
+            <file>file:/C:/xampp/htdocs/centrodigital/views/login.php</file>
+            <file>file:/C:/xampp/htdocs/centrodigital/views/clientepesquisar.php</file>
+            <file>file:/C:/xampp/htdocs/centrodigital/views/funccadastrar.php</file>
+            <file>file:/C:/xampp/htdocs/centrodigital/controllers/homeController.php</file>
+            <file>file:/C:/xampp/htdocs/centrodigital/models/usuarios.php</file>
+            <file>file:/C:/xampp/htdocs/centrodigital/views/funcpesquisar.php</file>
+            <file>file:/C:/xampp/htdocs/centrodigital/views/template.php</file>
+            <file>file:/C:/xampp/htdocs/centrodigital/controllers/funcpesquisarController.php</file>
+            <file>file:/C:/xampp/htdocs/centrodigital/controllers/funccadastrarController.php</file>
+            <file>file:/C:/xampp/htdocs/centrodigital/controllers/clientepesquisarController.php</file>
+            <file>file:/C:/xampp/htdocs/centrodigital/models/clientes.php</file>
+            <file>file:/C:/xampp/htdocs/centrodigital/views/clientecadastrar.php</file>
+        </group>
     </open-files>
 </project-private>

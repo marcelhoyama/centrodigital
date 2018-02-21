@@ -1,27 +1,27 @@
 <?php
-class laboratorio extends model{
+class patrimonio extends model{
 
-private $clinicaInfo;
+private $clinicaInfo = array();
 
 public function __construct($id){
 	parent::__construct();
 
 
-	$sql = " SELECT * FROM clinicas WHERE id = '".$id."'";
+	$sql = " SELECT * FROM patrimonio WHERE id_cliente = '".$id."'";
 
         	$sql = $this->db->query($sql);
         	
         	
         	
         	if($sql->rowCount() > 0) {
-			$this->clinicaInfo = $sql->fetch();
+			$this->clinicaInfo = $sql->fetchAll();
 		}
 }
 
 
-public function getNome(){
+public function getTipoPatrimonio(){
 
-	if(isset($this->clinicaInfo['nome'])) {
+	if(isset($this->clinicaInfo['tipo'])) {
 
 		return $this->clinicaInfo['nome'];
 	}

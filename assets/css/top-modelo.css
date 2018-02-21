@@ -1,0 +1,179 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27/08/2016, 09:03:33
+    Author     : Shell
+*/
+
+/** {
+	margin:0;
+	padding:0;
+	}*/
+	
+	header{
+		width:100%;
+		height:50px;
+		top:0;
+		left:0;
+		background-color:#5b859a;
+		position:relative;
+		}
+		
+		.menu-title{
+			position:fixed;
+			font-weight:Arial;
+			padding:5px;
+			width:100px;
+			height:40px;
+			text-align:left;
+			background-color:#5b859a;
+			color:#fff;
+			cursor:pointer;
+			transition:all .2s;
+			left:100px;
+			top:0;
+			}
+		.menu-icon{
+			position:fixed;
+			font-weight:bold;
+			padding:5px;
+			width:40px;
+			height:40px;
+			text-align:center;
+			background-color:#5b859a;
+			color:#fff;
+			cursor:pointer;
+			transition:all .2s;
+			left:200px;
+			top:0;
+			}
+			.menu-login{
+			position:fixed;
+			font-weight:bold;
+			padding:5px;
+			width:400px;
+			height:40px;
+			text-align:center;
+			background-color:#5b859a;
+			color:#fff;
+			cursor:pointer;
+			transition:all .4s;
+			right:0px;
+			top:0;
+			}
+			.menu-icon:hover{
+				background-color:#fff;
+				color:#5b859a;
+				}
+				
+				#chk{
+					display:none;
+					}
+					
+					.menu{
+						height:100%;
+						position:fixed;
+						background-color:#222;
+						top:0;
+						overflow: hidden;
+						transition:all .2s;
+						}
+			#principal{
+				
+				width:200px;
+				left:-200px;
+				}
+				ul{
+					list-style:none;
+					}
+					
+					ul li a{
+						
+						display: block;
+						font-size:18px;
+						font-family:'Arial';
+						padding:10px;
+						border-bottom:solid 1px #000;
+						color:#ccc;
+						text-decoration:none;
+						transition:all .2s;
+						}
+						
+						ul li span{
+							float:right;
+							padding-right:10px;
+							}
+							
+							ul li a:hover{
+								background-color: #5b859a;
+								
+								}
+								
+								.voltar{
+									color: #fff;
+	background-color: #3184a1;
+	font-size: 28px;
+	border: none;
+	box-shadow: none;
+	border-radius: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	cursor: pointer;
+	text-align: right;
+	display: block;
+	padding-right: 12px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	width: 100%;
+									}
+										.voltar-sub{
+									margin-top:60px;
+									background-color:#999;
+									border-left:solid 5px #444;
+									}
+									
+									.bg{
+										width:100%;
+										height:100%;
+										left:0;
+										top: 0;
+										position:fixed;
+										background-color:rgba(0,0,0,.6);
+										display:none;
+										
+										}
+										#chk:checked ~.bg{
+											display:block;
+											}
+										#chk:checked ~ #principal{
+											transform:translateX(200px);
+											}
+											
+											#cursos,#contato,#avaliacao,#calculo{
+												width:150px;
+												left:-150px;
+												}
+												
+												#cursos:target,#contato:target{
+													
+													transform:translateX(150px);
+													box-shadow:2px 2px 5px 2px rgba(0,0,0,.5);
+													}
+													
+													#avaliacao:target{
+													
+													transform:translateX(150px);
+													box-shadow:2px 2px 5px 2px rgba(0,0,0,.5);
+													}
+													
+													#calculo:target{
+													
+													transform:translateX(150px);
+													box-shadow:2px 2px 5px 2px rgba(0,0,0,.5);
+													}
+													#conteudo{
+														}

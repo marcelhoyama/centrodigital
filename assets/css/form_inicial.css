@@ -1,0 +1,288 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+/* ------------------------ GENERAL LAYOUT STYLES ----------------------- */
+
+.sidebar {
+	float: left;
+	width: 180px;
+	height: auto;
+	background-color: #CCCCCC;
+}
+.side_menu_button {
+	margin-top:0px;
+	float: left;
+	position:fixed;
+	-webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+}
+
+
+
+.icone_div {
+	float: right;
+	display: block;
+	background-color: #FFF;
+	width: 50px;
+	height: 50px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	-webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+}
+.widget_div {
+        width: 410px;
+	height: auto;
+	margin-bottom: 10px;
+	float: right;
+	
+	/*min-height: 580px;*/
+	/*background-color: #FFF;
+	-webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);*/
+}
+.hoje_lista_consultas {
+	float: left;
+	width: 410px;
+	height: auto;
+	background-color: #2E2E2E;
+	padding: 10px 10px 0px 10px;
+	overflow-y: scroll;
+	-webkit-box-shadow: inset 0px 1px 25px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: inset 0px 1px 25px 0px rgba(0,0,0,0.5);
+	box-shadow: inset 0px 1px 25px 0px rgba(0,0,0,0.5);
+}
+.lista_espera_consultas {
+	float: left;
+	width: 960px;
+	height: auto;
+	min-height: 250px;
+	background-color: #2E2E2E;
+	padding: 10px 10px 0px 10px;
+	overflow-y: scroll;
+	-webkit-box-shadow: inset 0px 1px 25px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: inset 0px 1px 25px 0px rgba(0,0,0,0.5);
+	box-shadow: inset 0px 1px 25px 0px rgba(0,0,0,0.5);
+}
+.lista_confirma_consultas {
+	float: left;
+	width: 960px;
+	height: 250px;
+	background-color: #2E2E2E;
+	padding: 10px 10px 0px 10px;
+	overflow-y: scroll;
+	-webkit-box-shadow: inset 5px 5px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 5px 5px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: inset 5px 5px 15px 0px rgba(0,0,0,0.75);
+}
+.exemplo {
+	float: left;
+	width: 920px;
+	min-height: 40px;
+	height:auto;
+	background-color: #FFF;
+	margin-bottom: 10px;
+	padding: 10px;
+	-webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+}
+.exemplo_widget {
+	float: left;
+	width: 100%;
+	min-height: 40px;
+	height:40px;
+	background-color: #FFF;
+	margin-bottom: 10px;
+        line-height: 5px;
+	
+	-webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+}
+.consulta_scroll {
+	width: 980px;
+	height: 500px;
+	background-color: #FFF;
+	overflow-y: scroll;
+}
+.pacientes_lista_busca {
+	float: left;
+	width: 960px;
+	height: 360px;
+	background-color: #2E2E2E;
+	padding: 10px 10px 0px 10px;
+	overflow-y: scroll;
+}
+.lista_consultas_anteriores {
+	float: left;
+	width: 960px;
+	height: 160px;
+	background-color: #2E2E2E;
+	padding: 10px 10px 0px 10px;
+	overflow-y: scroll;
+}
+.consulta_div a {
+	text-decoration: none;
+	font-size: 50%;
+}
+.perfil_scroll a {
+	text-decoration: none;
+	font-size: 50%;
+}
+.footer p {
+	text-align: right;
+	font-size: 12px;
+	padding: 15px;
+	margin: 0px;
+	color: #FFF;
+}
+.footer a {
+	
+	color: #246196;
+	text-decoration: none;
+	font-weight: bold;
+}
+ .menu_top{
+	position:fixed;
+	top:0;
+	width: 100%;
+	height:80px;
+	padding: 10px;
+	box-sizing: border-box;
+	background-color: #090;
+	clear: both;
+ }
+	.c-button {
+	width: 40px;
+	height: 40px;
+	background-color: #CCC;
+	cursor: pointer;
+	-webkit-appearance: none;
+	border: none;
+	font-size: 28px;
+}
+.c-menu {
+	position: fixed;
+	z-index: 200;
+	background-color: #67b5d1;
+	transition: transform 0.3s;
+	-webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+}
+.c-menu__items {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+/**
+ * Close button resets.
+ */
+.c-menu__close {
+	color: #fff;
+	background-color: #090;
+	font-size: 28px;
+	border: none;
+	box-shadow: none;
+	border-radius: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	cursor: pointer;
+	text-align: right;
+	display: block;
+	padding-right: 12px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	width: 100%;
+}
+/**
+ * Close button resets.
+ */
+.c-menu__close:focus {
+	outline: none;
+}
+body.has-active-menu {
+	overflow: hidden;
+}
+.c-mask {
+	position: fixed;
+	/*z-index: 100;*/
+	top: auto;
+	left: 0;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	background-color: #000;
+	opacity: 0;
+	transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+}
+.c-mask.is-active {
+	width: 100%;
+	height: 100%;
+	opacity: 0.7;
+	transition: opacity 0.3s;
+}
+.c-menu--slide-left {
+	width: 100%;
+	overflow:visible;
+	height: 100%;
+	background-color: #FFF;
+}
+ @media all and (min-width: 320px) {
+.c-menu--slide-left {
+	width: 200px;
+}
+ }
+.c-menu--slide-left .c-menu__item {
+	display: block;
+	text-align: left;
+}
+.c-menu--slide-left .c-menu__item:first-child {
+	border-top: none;
+}
+.c-menu--slide-left .c-menu__item:last-child {
+	border-bottom: none;
+}
+.c-menu--slide-left .c-menu__link {
+	display: block;
+	padding: 12px 24px;
+	color: #666;
+	text-decoration: none;
+}
+.c-menu--slide-left {
+	top: auto;
+	left: 0;
+	transform: translateX(50%);
+}
+ @media all and (min-width: 320px) {
+.c-menu--slide-left {
+	transform: translateX(-300px);
+}
+ }
+.c-menu--slide-left.is-active {
+	transform: translateX(0);
+}
+
+
+/**
+ * Body states.
+ *
+ * When a menu is active, we want to hide the overflows on the body to prevent
+ * awkward document scrolling.
+ */
+
+.menu_splitters {
+	height: 1px;
+	background-color: #999;
+	width: 160px;
+	margin: auto;
+	padding: 0px;
+}
